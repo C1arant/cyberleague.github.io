@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cyber League</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #0d0d0d;
+        color: #fff;
+        scroll-behavior: smooth;
+        line-height: 1.5;
+    }
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding: 12px 24px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(8px);
+        z-index: 100;
+    }
+    header a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        transition: opacity 0.3s;
+    }
+    header a:hover {
+        opacity: 0.7;
+    }
+    section {
+        padding: 50px 20px;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+    #hero {
+        min-height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: radial-gradient(circle at center, #151515 0%, #000 100%);
+        padding: 80px 20px 50px;
+    }
+    #hero img {
+        max-width: 250px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    #hero p {
+        font-size: 1rem;
+        color: #aaa;
+        max-width: 420px;
+    }
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    .feature {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 18px;
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: transform 0.3s;
+        font-size: 0.95rem;
+    }
+    .feature:hover {
+        transform: translateY(-2px);
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+    }
+    .gallery img {
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+    .patch-note {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        padding: 10px 15px;
+    }
+    .patch-note h3 {
+        margin: 0;
+        font-size: 1rem;
+    }
+    .patch-note .content {
+        display: none;
+        padding-top: 8px;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
+    .contact {
+        text-align: center;
+    }
+    .contact a {
+        display: inline-block;
+        margin: 0 8px;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid transparent;
+        font-size: 0.9rem;
+        transition: border-color 0.3s;
+    }
+    .contact a:hover {
+        border-color: #fff;
+    }
+</style>
+</head>
+<body>
+<header>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#patch-notes">Patch Notes</a>
+    <a href="#contact">Contact</a>
+</header>
+
+<section id="hero">
+    <img src="Images/Logo.png" alt="Cyber League Logo">
+    <p>A premium competitive FPS set in a sleek cyberpunk world.</p>
+</section>
+
+<section id="about">
+    <h2>About</h2>
+    <p>Cyber League is a tactical, team-based FPS blending precision gameplay with high-end visual design. Every match is a battle of skill, strategy, and style — built for players who demand more from their competitive shooters.</p>
+</section>
+
+<section id="features">
+    <h2>Features</h2>
+    <div class="features">
+        <div class="feature"><strong>Precision Gameplay</strong><br>Refined shooting mechanics and competitive balance.</div>
+        <div class="feature"><strong>Minimal Cyberpunk Aesthetic</strong><br>A clean, premium take on the cyberpunk world.</div>
+        <div class="feature"><strong>Strategic Depth</strong><br>Multiple playstyles, modular maps, and objective-based modes.</div>
+        <div class="feature"><strong>Unique Calling Cards</strong><br>Show your identity with sleek player banners.</div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <img src="Images/Screenshot 2025-08-04 164618.png" alt="Screenshot 1">
+        <img src="Images/Screenshot 2025-08-04 164632.png" alt="Screenshot 2">
+        <img src="Images/Screenshot 2025-08-07 024114.png" alt="Screenshot 3">
+    </div>
+</section>
+
+<section id="patch-notes">
+    <h2>Patch Notes</h2>
+    <div id="patch-container"></div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact & Community</h2>
+    <a href="#">Discord</a>
+    <a href="#">Twitter</a>
+    <a href="mailto:contact@cyberleague.com">Email</a>
+</section>
+
+<script>
+
+    fetch('Notes/index.json')
+    .then(res => res.json())
+    .then(files => {
+        const latestFiles = files.slice(0, 3); // latest 3
+        latestFiles.forEach(file => {
+        fetch('Notes/' + file)
+            .then(res => res.text())
+            .then(md => addPatchNote(md));
+        });
+    });
+
+    function addPatchNote(md) {
+    const container = document.getElementById('patch-container');
+    const lines = md.split('\n');
+    let currentPatch = document.createElement('div');
+    currentPatch.className = 'patch-note';
+
+    lines.forEach(line => {
+        if(line.startsWith('# ')) {
+        const h3 = document.createElement('h3');
+        h3.textContent = line.replace('# ', '');
+        currentPatch.appendChild(h3);
+        const content = document.createElement('div');
+        content.className = 'content';
+        currentPatch.appendChild(content);
+
+        h3.addEventListener('click', () => {
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+        } else if(line.trim() !== '') {
+        currentPatch.querySelector('.content').innerHTML += '<p>' + line + '</p>';
+        }
+    });
+
+    container.appendChild(currentPatch);
+    }
+</script>
+
+
+</body>
+</html>
