@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cyber League</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <style>
+    /* General */
     body {
         margin: 0;
         font-family: 'Inter', sans-serif;
@@ -15,6 +15,12 @@
         scroll-behavior: smooth;
         line-height: 1.5;
     }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    /* Header */
     header {
         position: fixed;
         top: 0;
@@ -23,13 +29,11 @@
         display: flex;
         justify-content: flex-end;
         gap: 20px;
-        background: rgba(0, 0, 0, 0.4);
+        background: rgba(0,0,0,0.4);
         backdrop-filter: blur(8px);
         z-index: 100;
     }
     header a {
-        color: #fff;
-        text-decoration: none;
         font-weight: 500;
         font-size: 0.85rem;
         letter-spacing: 0.5px;
@@ -38,20 +42,26 @@
     header a:hover {
         opacity: 0.7;
     }
+
+    /* Sections */
     section {
         padding: 50px 20px;
         max-width: 900px;
         margin: 0 auto;
     }
+
+    /* Hero */
     #hero {
-        min-height: 60vh;
+        width: 100vw;
+        padding: 80px 0 50px;
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        align-items: center;
         text-align: center;
         background: radial-gradient(circle at center, #151515 0%, #000 100%);
-        padding: 80px 20px 50px;
+    }
+    .hero-inner {
+        max-width: 900px;
+        text-align: center;
     }
     #hero img {
         max-width: 250px;
@@ -59,31 +69,104 @@
         margin-bottom: 15px;
     }
     #hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: #aaa;
         max-width: 420px;
+        margin: 0 auto;
     }
+    #hero .cta {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 12px 28px;
+        background: #ff004f;
+        color: #fff;
+        font-weight: 600;
+        border-radius: 6px;
+        transition: background 0.3s;
+    }
+    #hero .cta:hover {
+        background: #e60046;
+    }
+
+    /* Headings */
     h2 {
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 12px;
     }
+
+    /* Features Grid */
     .features {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
         gap: 20px;
     }
     .feature {
-        background: rgba(255, 255, 255, 0.02);
+        background: rgba(255,255,255,0.02);
         padding: 18px;
         border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255,255,255,0.05);
         transition: transform 0.3s;
         font-size: 0.95rem;
     }
     .feature:hover {
         transform: translateY(-2px);
     }
+
+    /* Maps / Game Modes */
+    .maps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+    }
+    .maps img {
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+    }
+
+    /* Partnered Streamers */
+    .partners-carousel 
+    {
+    display: flex;
+    flex-wrap: wrap;       /* allows cards to wrap onto multiple lines */
+    gap: 16px;
+    justify-content: center; /* centers the cards */
+    padding-bottom: 10px;
+    overflow: visible;     /* remove horizontal scroll */
+    }
+    .partner-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 140px;
+        flex-shrink: 0;
+        background: rgba(255,255,255,0.02);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 8px;
+        padding: 12px;
+        text-align: center;
+        flex: 1 1 140px;
+        max-width: 180px;
+    }
+    .partner-card img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 8px;
+    }
+    .partner-card a {
+        color: #ff004f;
+        font-weight: 600;
+        text-decoration: none;
+        transition: opacity 0.3s;
+    }
+    .partner-card a:hover {
+        opacity: 0.7;
+    }
+
+    /* Gallery */
     .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -94,28 +177,9 @@
         border-radius: 6px;
         object-fit: cover;
     }
-    .patch-note {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        padding: 10px 15px;
-    }
-    .patch-note h3 {
-        margin: 0;
-        font-size: 1rem;
-    }
-    .patch-note .content {
-        display: none;
-        padding-top: 8px;
-        font-size: 0.9rem;
-        color: #ccc;
-    }
-    .contact {
-        text-align: center;
-    }
-    .contact a {
+
+    /* Community / News */
+    .community a {
         display: inline-block;
         margin: 0 8px;
         color: #fff;
@@ -125,39 +189,135 @@
         font-size: 0.9rem;
         transition: border-color 0.3s;
     }
-    .contact a:hover {
+    .community a:hover {
         border-color: #fff;
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        font-size: 0.9rem;
+        color: #aaa;
     }
 </style>
 </head>
 <body>
+
 <header>
     <a href="#hero">Home</a>
     <a href="#about">About</a>
     <a href="#features">Features</a>
+    <a href="#maps">Maps</a>
+    <a href="#partners">Partnered Streamers</a>
     <a href="#gallery">Gallery</a>
-    <a href="#patch-notes">Patch Notes</a>
-    <a href="#contact">Contact</a>
+    <a href="#community">Community</a>
 </header>
 
 <section id="hero">
-    <img src="Images/Logo.png" alt="Cyber League Logo">
-    <p>A competitive FPS set in a lowpoly cyberpunk world.</p>
+    <div class="hero-inner">
+        <img src="Images/Logo.png" alt="Cyber League Logo">
+        <p>Precision. Strategy. Cyber League.</p>
+        <a href="#" class="cta">Play Now</a>
+    </div>
 </section>
 
 <section id="about">
     <h2>About</h2>
-    <p>Cyber League is a tactical, team-based FPS blending precision gameplay with low-end visual design. Every match is a battle of skill, strategy, and style — built for players who demand more from their competitive shooters.</p>
+    <p>Cyber League is a tactical, team-based FPS that puts skill first. No abilities, no agents — just pure skill and precision. Every match is a test of strategy and teamwork in a lowpoly cyberpunk world.</p>
 </section>
 
 <section id="features">
     <h2>Features</h2>
     <div class="features">
         <div class="feature"><strong>Precision Gameplay</strong><br>Refined shooting mechanics and competitive balance.</div>
-        <div class="feature"><strong>Minimal Cyberpunk Aesthetic</strong><br>A clean, premium take on the cyberpunk world.</div>
-        <div class="feature"><strong>Strategic Depth</strong><br>Multiple playstyles, modular maps, and objective-based modes.</div>
-        <div class="feature"><strong>Unique Calling Cards</strong><br>Show your identity with sleek player banners.</div>
-        <div class="feature"><strong>Unique Creator skins</strong><br>Represent your favorite small streamer with custom skins.</div>
+        <div class="feature"><strong>Tactical Maps</strong><br>Modular arenas designed for strategy and skillful play.</div>
+        <div class="feature"><strong>Fast-Paced Combat</strong><br>Engaging matches that reward reflexes and teamwork.</div>
+        <div class="feature"><strong>Minimal Cyberpunk Aesthetic</strong><br>A sleek, premium visual design with lowpoly environments.</div>
+    </div>
+</section>
+
+<section id="maps">
+    <h2>Maps & Modes</h2>
+    <div class="maps">
+        <img src="Images/Map1.png" alt="Map 1">
+        <img src="Images/Map2.png" alt="Map 2">
+        <img src="Images/Map3.png" alt="Map 3">
+    </div>
+</section>
+
+<section id="partners">
+    <h2>Partnered Streamers</h2>
+    <p>We partner with small game dev streamers and give them their own in-game creator skins. Support your favorite creators!</p>
+    <div class="partners-carousel">
+        <div class="partner-card">
+            <img src="Streamer images/Claw.png" alt="ClawStorm">
+            <a href="https://www.twitch.tv/clawstorm_" target="_blank">ClawStorm_</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Hypnotik_Games.png" alt="Hypnotik_Games">
+            <a href="https://www.twitch.tv/hypnotik_games" target="_blank">Hypnotik_Games</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/FinIsFine.png" alt="finisfine">
+            <a href="https://www.twitch.tv/finisfine" target="_blank">finisfine</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Limitless.png" alt="ThyLimitless">
+            <a href="https://www.twitch.tv/thylimitless" target="_blank">ThyLimitless</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Zenn.png" alt="ZenniverseLive">
+            <a href="https://www.twitch.tv/zenniverselive" target="_blank">ZenniverseLive</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Brambs.png" alt="BramboNumber5">
+            <a href="https://www.twitch.tv/brambonumber5" target="_blank">BramboNumber5</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/vipes.png" alt="VipesTSG">
+            <a href="https://www.twitch.tv/vipestsg" target="_blank">VipesTSG</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Jed.png" alt="Jedm_NZ">
+            <a href="https://www.twitch.tv/jedm_nz" target="_blank">Jedm_NZ</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Covino.png" alt="JustCovino">
+            <a href="https://www.twitch.tv/justcovino" target="_blank">JustCovino</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/pemmy.png" alt="Pemmy0">
+            <a href="https://www.twitch.tv/pemmy0" target="_blank">Pemmy0</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/fali.png" alt="Falinere">
+            <a href="https://www.twitch.tv/falinere" target="_blank">Falinere</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/mags.png" alt="meMaggatron">
+            <a href="https://www.twitch.tv/memaggatron" target="_blank">meMaggatron</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/mezu.png" alt="qMeZu">
+            <a href="https://www.twitch.tv/qmezu" target="_blank">qMeZu</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Stefen.png" alt="Sir_Stefen">
+            <a href="https://www.twitch.tv/sir_stefen" target="_blank">Sir_Stefen</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/weblin.png" alt="Weblin">
+            <a href="https://www.twitch.tv/weblin" target="_blank">Weblin</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/kezzy.png" alt="CG_Kezzy">
+            <a href="https://www.twitch.tv/cg_kezzy" target="_blank">CG_Kezzy</a>
+        </div>
+        <div class="partner-card">
+            <img src="Streamer images/Koutchise.png" alt="Koutchise">
+            <a href="https://www.twitch.tv/koutchise" target="_blank">Koutchise</a>
+        </div>
     </div>
 </section>
 
@@ -170,56 +330,23 @@
     </div>
 </section>
 
-<section id="patch-notes">
-    <h2>Patch Notes</h2>
-    <div id="patch-container"></div>
+<section id="community" class="community">
+    <h2>Community</h2>
+    <p>Join the conversation and stay updated with Cyber League.</p>
+
+    <!-- Discord Embed -->
+    <iframe src="https://discord.com/widget?id=1402924095716200480&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+    <!-- Fallback links -->
+    <div style="margin-top:12px;">
+        <a href="support@thistlegames.dev">Email</a>
+    </div>
 </section>
 
-<section id="contact" class="contact">
-    <h2>Contact & Community</h2>
-    <a href="https://discord.gg/Fm8YV7BAT4">Discord</a>
-    <a href="#">Twitter</a>
-    <a href="mailto:contact@cyberleague.com">Email</a>
-</section>
 
-<script>
+<footer>
+    &copy; 2025 Cyber League. All rights reserved.
+</footer>
 
-    fetch('Notes/index.json')
-    .then(res => res.json())
-    .then(files => {
-        const latestFiles = files.slice(0, 3); // latest 3
-        latestFiles.forEach(file => {
-        fetch('Notes/' + file)
-            .then(res => res.text())
-            .then(md => addPatchNote(md));
-        });
-    });
-
-    function addPatchNote(md) {
-    const container = document.getElementById('patch-container');
-    const lines = md.split('\n');
-    let currentPatch = document.createElement('div');
-    currentPatch.className = 'patch-note';
-
-    lines.forEach(line => {
-        if(line.startsWith('# ')) {
-        const h3 = document.createElement('h3');
-        h3.textContent = line.replace('# ', '');
-        currentPatch.appendChild(h3);
-        const content = document.createElement('div');
-        content.className = 'content';
-        currentPatch.appendChild(content);
-
-        h3.addEventListener('click', () => {
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
-        });
-        } else if(line.trim() !== '') {
-        currentPatch.querySelector('.content').innerHTML += '<p>' + line + '</p>';
-        }
-    });
-
-    container.appendChild(currentPatch);
-    }
-</script>
 </body>
 </html>
