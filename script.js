@@ -1,7 +1,7 @@
 document.querySelectorAll('.partner-card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         card.style.transform = "scale(1.05)";
-        card.style.boxShadow = "0 0 15px rgba(255,0,79,0.5)";
+        card.style.boxShadow = "0 0 15px #58c29e";
     });
     card.addEventListener('mouseleave', () => {
         card.style.transform = "scale(1)";
@@ -14,7 +14,7 @@ progress.style.position = "fixed";
 progress.style.top = "0";
 progress.style.left = "0";
 progress.style.height = "4px";
-progress.style.background = "#ff004f";
+progress.style.background = "#367a64ff";
 progress.style.width = "0%";
 progress.style.zIndex = "200";
 document.body.appendChild(progress);
