@@ -99,9 +99,9 @@ header a:hover {
 }
 
 #hero img {
-    max-width: 512px;
-    height: auto;
-    margin-bottom: 15px;
+  max-width: 240px; /* or 200px, tweak to your liking */
+  height: auto;
+  margin-bottom: 15px;
 }
 
 .hero-inner h1 {
