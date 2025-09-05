@@ -1,25 +1,32 @@
-document.querySelectorAll('.partner-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = "scale(1.05)";
-        card.style.boxShadow = "0 0 15px #58c29e";
-    });
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = "scale(1)";
-        card.style.boxShadow = "none";
-    });
+// Gallery carousel
+const track = document.querySelector('.gallery-track');
+const prevBtn = document.querySelector('.gallery-btn.prev');
+const nextBtn = document.querySelector('.gallery-btn.next');
+let index = 0;
+
+function updateGallery() {
+    const width = track.children[0].offsetWidth + 20; // item width + margin
+    track.style.transform = `translateX(${-index * width}px)`;
+}
+
+nextBtn.addEventListener('click', () => {
+    if (index < track.children.length - 1) {
+        index++;
+        updateGallery();
+    }
 });
 
-const progress = document.createElement('div');
-progress.style.position = "fixed";
-progress.style.top = "0";
-progress.style.left = "0";
-progress.style.height = "4px";
-progress.style.background = "#367a64ff";
-progress.style.width = "0%";
-progress.style.zIndex = "200";
-document.body.appendChild(progress);
+prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+        index--;
+        updateGallery();
+    }
+});
 
-window.addEventListener('scroll', () => {
-    const scroll = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
-    progress.style.width = scroll + "%";
+document.querySelectorAll('.leaderboard-wrapper .carousel-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cards = btn.parentElement.querySelector('.leaderboard-cards');
+    const scrollAmount = btn.classList.contains('left') ? -300 : 300;
+    cards.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
 });
