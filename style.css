@@ -52,8 +52,8 @@ header {
 }
 
 .header-logo img {
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 250px;
   max-width: 120px;
   object-fit: contain;
   display: block;
