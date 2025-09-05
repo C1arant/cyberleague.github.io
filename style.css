@@ -53,7 +53,6 @@ header {
 
 .header-logo img {
   height: auto;
-  width: 250px;
   max-width: 120px;
   object-fit: contain;
   display: block;
