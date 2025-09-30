@@ -1,32 +1,26 @@
-// Gallery carousel
-const track = document.querySelector('.gallery-track');
-const prevBtn = document.querySelector('.gallery-btn.prev');
-const nextBtn = document.querySelector('.gallery-btn.next');
-let index = 0;
-
-function updateGallery() {
-    const width = track.children[0].offsetWidth + 20; // item width + margin
-    track.style.transform = `translateX(${-index * width}px)`;
-}
-
-nextBtn.addEventListener('click', () => {
-    if (index < track.children.length - 1) {
-        index++;
-        updateGallery();
+(function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    const page = document.body.dataset.page;
+    if (page) {
+      document.querySelectorAll('[data-nav]').forEach(link => {
+        if (link.dataset.nav === page) {
+          link.classList.add('is-active');
+        }
+      });
     }
-});
 
-prevBtn.addEventListener('click', () => {
-    if (index > 0) {
-        index--;
-        updateGallery();
-    }
-});
+    const header = document.querySelector('.site-header');
+    if (!header) return;
 
-document.querySelectorAll('.leaderboard-wrapper .carousel-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const cards = btn.parentElement.querySelector('.leaderboard-cards');
-    const scrollAmount = btn.classList.contains('left') ? -300 : 300;
-    cards.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    let lastScroll = window.scrollY;
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll && currentScroll > 120) {
+        header.classList.add('header-hidden');
+      } else {
+        header.classList.remove('header-hidden');
+      }
+      lastScroll = currentScroll;
+    });
   });
-});
+})();

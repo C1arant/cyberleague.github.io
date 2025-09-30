@@ -1,266 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber League</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber League — Precision Forged Tactical FPS</title>
+  <meta name="description" content="Cyber League is a precision-first tactical FPS built for players who crave mechanical mastery over gimmicks.">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header>
-  <a href="#hero">Home</a>
-  <a href="#about">About</a>
-  <a href="#features">Features</a>
-  <a href="#maps">Maps</a>
-  <a href="#partners">Partnered Streamers</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#community">Community</a>
-</header>
-
-<!-- Hero Section with Video Banner -->
-<section id="hero">
-  <div class="hero-inner">
-    <video autoplay muted loop id="hero-video">
-      <source src="Images/banner.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay">
-      <img src="Images/Logo.png" alt="Cyber League Logo">
-      <p>Precision. Strategy. Cyber League.</p>
-      <a href="#" class="cta">Coming Soon</a>
+<body data-page="home">
+  <header class="site-header">
+    <div class="shell">
+      <a class="brand" href="index.html">
+        <img src="Images/Logo.png" alt="Cyber League logo">
+        <span>Cyber League</span>
+      </a>
+      <nav class="primary-nav">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="experience.html" data-nav="experience">Experience</a>
+        <a href="community.html" data-nav="community">Community</a>
+        <a class="cta-link" href="mailto:contact@cyberleague.gg">Request Access</a>
+      </nav>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="about">
-  <h2>About</h2>
-  <p>Cyber League is a tactical, team-based FPS that puts skill first. No abilities, no agents just pure skill and precision. Every match is a test of strategy and teamwork in a lowpoly cyberpunk world.</p>
-</section>
-
-<section id="features">
-  <h2>Features</h2>
-  <div class="features">
-    <div class="feature"><strong>Precision Gameplay</strong><br>Refined shooting mechanics and competitive balance.</div>
-    <div class="feature"><strong>Tactical Maps</strong><br>Modular arenas designed for strategy and skillful play.</div>
-    <div class="feature"><strong>Fast-Paced Combat</strong><br>Engaging matches that reward reflexes and teamwork.</div>
-    <div class="feature"><strong>Minimal Cyberpunk Aesthetic</strong><br>A sleek, premium visual design with lowpoly environments.</div>
-  </div>
-</section>
-
-<!-- Maps Section with Horizontal Carousel -->
-<section id="maps">
-  <h2>Maps</h2>
-
-  <div class="map-carousel">
-    <!-- Subway -->
-    <div class="map-card">
-      <h3>Subway</h3>
-      <div class="map-card-inner">
-        <img src="Images/Screenshot 2025-08-04 164618.png" alt="Subway">
-        <p>A Dystopian Cyberpunk Subway station closed down due to a Cyborg explosion</p>
+  <main>
+    <section class="hero">
+      <img class="hero-media" src="Images/Screenshot 2025-08-04 164618.png" alt="Cyber League subway duel">
+      <div class="hero-content">
+        <div>
+          <span class="hero-kicker">Alpha flight path &bull; Coming soon</span>
+          <h1 class="hero-title">Minimal form. Maximum fire. Pure tactical heat.</h1>
+          <p class="hero-lede">Cyber League is an ultra-clean, low-poly competitive shooter where every round is a duel of reflexes, positioning, and cerebral team play. No abilities. No noise. Just the most magnetic gunplay orbiting a neon-lit future.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@cyberleague.gg">Reserve your callsign</a>
+            <a class="btn btn-outline" href="experience.html">Preview the experience</a>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Factory -->
-    <div class="map-card">
-      <h3>Factory</h3>
-      <div class="map-card-inner">
-        <img src="Images/Screenshot 2025-08-04 164632.png" alt="Factory">
-        <p>The home of all Cyber Life</p>
+    <section class="section" id="pillars">
+      <header class="section-header">
+        <span class="eyebrow">The Cyber League Signal</span>
+        <h2 class="section-title">A shooter stripped to the core and tuned for the obsessed.</h2>
+        <p class="section-description">Inspired by the clarity of SpaceX control rooms and the sharp edges of X, Cyber League reimagines arena tactics with modern polish and unapologetic speed.</p>
+      </header>
+      <div class="highlight-grid">
+        <article class="panel">
+          <h3>Precision Engine</h3>
+          <p>Elastic recoil profiles and exact hit registration tuned for esports-level consistency. Your mechanics—no excuses.</p>
+        </article>
+        <article class="panel">
+          <h3>Binary Economy</h3>
+          <p>Clean credits system with transparent upgrade paths. Every buy round reads like a mission briefing.</p>
+        </article>
+        <article class="panel">
+          <h3>Orbital Tempo</h3>
+          <p>Two-minute rounds with crisp rotations and decisive spikes. The clock is a pressure cooker, not a suggestion.</p>
+        </article>
+        <article class="panel">
+          <h3>Neon Minimalism</h3>
+          <p>Low-poly arenas, razor UI, and cinematic lighting engineered to keep focus on the firefight.</p>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <!-- Arena -->
-    <div class="map-card">
-      <h3>Arena</h3>
-      <div class="map-card-inner">
-        <img src="Images/Screenshot 2025-08-07 024114.png" alt="Arena">
-        <p>The main event for competitive Gameplay</p>
+    <section class="section" id="design">
+      <div class="dual-panel">
+        <article class="panel">
+          <h3>Command line clarity</h3>
+          <p>Match intel streams through a clean HUD inspired by mission control dashboards. Readouts are surgical so squads can call crisp plays in milliseconds.</p>
+        </article>
+        <article class="panel">
+          <h3>Systems in sync</h3>
+          <p>Networking, netcode, and spectator tech align to keep every pixel locked. Whether you’re grinding ladder or on the main stage, the experience is identical.</p>
+        </article>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Partnered Streamers -->
-<section id="partners">
-  <h2>Partnered Streamers</h2>
-  <p>We partner with small game dev streamers and give them their own in-game creator skins. Support your favorite creators!</p>
-  <div class="partners-carousel">
-    <!-- All partner cards remain intact -->
-    <div class="partner-card"><img src="Streamer images/Claw.png" alt="ClawStorm"><a href="https://www.twitch.tv/clawstorm_" target="_blank">ClawStorm_</a></div>
-    <div class="partner-card"><img src="Streamer images/Hypnotik_Games.png" alt="Hypnotik_Games"><a href="https://www.twitch.tv/hypnotik_games" target="_blank">Hypnotik_Games</a></div>
-    <div class="partner-card"><img src="Streamer images/FinIsFine.png" alt="finisfine"><a href="https://www.twitch.tv/finisfine" target="_blank">finisfine</a></div>
-    <div class="partner-card"><img src="Streamer images/Limitless.png" alt="ThyLimitless"><a href="https://www.twitch.tv/thylimitless" target="_blank">ThyLimitless</a></div>
-    <div class="partner-card"><img src="Streamer images/Zenn.png" alt="ZenniverseLive"><a href="https://www.twitch.tv/zenniverselive" target="_blank">ZenniverseLive</a></div>
-    <div class="partner-card"><img src="Streamer images/Brambs.png" alt="BramboNumber5"><a href="https://www.twitch.tv/brambonumber5" target="_blank">BramboNumber5</a></div>
-    <div class="partner-card"><img src="Streamer images/vipes.png" alt="VipesTSG"><a href="https://www.twitch.tv/vipestsg" target="_blank">VipesTSG</a></div>
-    <div class="partner-card"><img src="Streamer images/Jed.png" alt="Jedm_NZ"><a href="https://www.twitch.tv/jedm_nz" target="_blank">Jedm_NZ</a></div>
-    <div class="partner-card"><img src="Streamer images/Covino.png" alt="JustCovino"><a href="https://www.twitch.tv/justcovino" target="_blank">JustCovino</a></div>
-    <div class="partner-card"><img src="Streamer images/pemmy.png" alt="Pemmy0"><a href="https://www.twitch.tv/pemmy0" target="_blank">Pemmy0</a></div>
-    <div class="partner-card"><img src="Streamer images/fali.png" alt="Falinere"><a href="https://www.twitch.tv/falinere" target="_blank">Falinere</a></div>
-    <div class="partner-card"><img src="Streamer images/mezu.png" alt="qMeZu"><a href="https://www.twitch.tv/qmezu" target="_blank">qMeZu</a></div>
-    <div class="partner-card"><img src="Streamer images/Stefen.png" alt="Sir_Stefen"><a href="https://www.twitch.tv/sir_stefen" target="_blank">Sir_Stefen</a></div>
-    <div class="partner-card"><img src="Streamer images/weblin.png" alt="Weblin"><a href="https://www.twitch.tv/weblin" target="_blank">Weblin</a></div>
-    <div class="partner-card"><img src="Streamer images/kezzy.png" alt="CG_Kezzy"><a href="https://www.twitch.tv/cg_kezzy" target="_blank">CG_Kezzy</a></div>
-    <div class="partner-card"><img src="Streamer images/Koutchise.png" alt="Koutchise"><a href="https://www.twitch.tv/koutchise" target="_blank">Koutchise</a></div>
-    <div class="partner-card"><img src="Streamer images/Mau.png" alt="MAUKAU_DEV"><a href="https://www.twitch.tv/maukau_dev" target="_blank">MAUKAU_DEV</a></div>
-    <div class="partner-card"><img src="Streamer images/OGD.png" alt="OldGameDad"><a href="https://www.twitch.tv/oldgamedad" target="_blank">OldGameDad</a></div>
-  </div>
-</section>
-
-<!-- Leaderboard Scrollable -->
-<section id="partner-leaderboard">
-  <h2>Partner Leaderboard</h2>
-  <p>This is a fun, non-live leaderboard showing partnered creators ranked by their level.</p>
-  <div class="leaderboard-vertical">
-
-    <!-- Header Row -->
-    <div class="leaderboard-row header">
-      <div class="col rank">Rank</div>
-      <div class="col streamer">Streamer</div>
-      <div class="col level">Level</div>
-    </div>
-
-    <!-- Streamer Rows -->
-    <div class="leaderboard-row">
-      <div class="col rank">#1</div>
-      <div class="col streamer"><img src="Streamer images/Claw.png" alt="ClawStorm_"><span>ClawStorm_</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#2</div>
-      <div class="col streamer"><img src="Streamer images/Hypnotik_Games.png" alt="Hypnotik_Games"><span>Hypnotik_Games</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#3</div>
-      <div class="col streamer"><img src="Streamer images/FinIsFine.png" alt="finisfine"><span>finisfine</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#4</div>
-      <div class="col streamer"><img src="Streamer images/Limitless.png" alt="ThyLimitless"><span>ThyLimitless</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#5</div>
-      <div class="col streamer"><img src="Streamer images/Zenn.png" alt="ZenniverseLive"><span>ZenniverseLive</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#6</div>
-      <div class="col streamer"><img src="Streamer images/Brambs.png" alt="BramboNumber5"><span>BramboNumber5</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#7</div>
-      <div class="col streamer"><img src="Streamer images/vipes.png" alt="VipesTSG"><span>VipesTSG</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#8</div>
-      <div class="col streamer"><img src="Streamer images/Jed.png" alt="Jedm_NZ"><span>Jedm_NZ</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#9</div>
-      <div class="col streamer"><img src="Streamer images/Covino.png" alt="JustCovino"><span>JustCovino</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#10</div>
-      <div class="col streamer"><img src="Streamer images/pemmy.png" alt="Pemmy0"><span>Pemmy0</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#11</div>
-      <div class="col streamer"><img src="Streamer images/fali.png" alt="Falinere"><span>Falinere</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#12</div>
-      <div class="col streamer"><img src="Streamer images/mezu.png" alt="qMeZu"><span>qMeZu</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#13</div>
-      <div class="col streamer"><img src="Streamer images/Stefen.png" alt="Sir_Stefen"><span>Sir_Stefen</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#14</div>
-      <div class="col streamer"><img src="Streamer images/weblin.png" alt="Weblin"><span>Weblin</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#15</div>
-      <div class="col streamer"><img src="Streamer images/kezzy.png" alt="CG_Kezzy"><span>CG_Kezzy</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#16</div>
-      <div class="col streamer"><img src="Streamer images/Koutchise.png" alt="Koutchise"><span>Koutchise</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#17</div>
-      <div class="col streamer"><img src="Streamer images/Mau.png" alt="MAUKAU_DEV"><span>MAUKAU_DEV</span></div>
-      <div class="col level">1</div>
-    </div>
-
-    <div class="leaderboard-row">
-      <div class="col rank">#18</div>
-      <div class="col streamer"><img src="Streamer images/OGD.png" alt="OldGameDad"><span>OldGameDad</span></div>
-      <div class="col level">1</div>
-    </div>
-
-  </div>
-</section>
-
-
-
-<section id="community" class="community">
-  <h2>Community</h2>
-  <p>Join the conversation and stay updated with Cyber League.</p>
-  <iframe src="https://discord.com/widget?id=1402924095716200480&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-</section>
-
-<footer>
-  <div class="footer-container">
-    <div class="footer-column">
-      <h4>About</h4>
-      <p>Cyber League is a competitive FPS built on pure skill. No abilities, no gimmicks — just raw aim and strategy.</p>
-    </div>
-    <div class="footer-column">
-      <h4>Socials</h4>
-      <div class="social-links">
-        <a href="https://www.twitch.tv/ciarant_dev">Twitch</a>
-        <a href="https://www.youtube.com/@CiarantDev">YouTube</a>
-        <a href="mailto:support@thistlegames.dev">Email</a>
+    <section class="section" id="cta">
+      <div class="cta-panel">
+        <h2>We’re assembling the inaugural flight crew.</h2>
+        <p>Developers, sharpshooters, community architects—if you build momentum in public, we want you in the hangar. Tap in for early playtests, creator programs, and studio drops.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="community.html">Meet the community</a>
+          <a class="btn btn-outline" href="https://twitter.com" target="_blank" rel="noopener">Follow the signal on X</a>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Cyber League. All rights reserved.</p>
-  </div>
-</footer>
+    </section>
+  </main>
 
-<script src="script.js"></script>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; <span id="year">2024</span> Cyber League. All systems calibrated.</span>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="experience.html">Experience</a>
+        <a href="community.html">Community</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
